@@ -7,22 +7,31 @@ const Fetch01 = () => {
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        if (response.ok) {
-          return response.json()
-        }
-        throw response
-      })
-      .then((res) => {
-        setData(res)
-      })
-      .catch((error) => {
+      .then((res) => res.json())
+      .then((result) => {
+        setData(result)
+        setLoading(false)
+      }),
+      (error) => {
         console.error("error fetching data: ", error)
         setError(error)
-      })
-      .finally(() => {
-        setLoading(false)
-      })
+      }
+    //   .then((response) => {
+    //     if (response.ok) {
+    //       return response.json()
+    //     }
+    //     throw response
+    //   })
+    //   .then((res) => {
+    //     setData(res)
+    //   })
+    //   .catch((error) => {
+    //     console.error("error fetching data: ", error)
+    //     setError(error)
+    //   })
+    //   .finally(() => {
+    //     setLoading(false)
+    //   })
   }, [])
 
   if (loading) return "Loading..."
