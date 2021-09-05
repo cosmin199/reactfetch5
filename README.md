@@ -1,4 +1,4 @@
-## 5 ways to fetch data with react js
+## 4 ways to fetch data with react js
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
